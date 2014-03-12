@@ -37,10 +37,10 @@ describe Term do
     end
   end
 
-  # describe '.search' do
-  #   it 'allows the user to search for a specific term' do
-  #     test_term = Term.create('carrot', 'veggie')
-  #     Term.search('carrot').should eq test_term
-  #   end
-  # end
+  describe '.search' do
+    it 'allows the user to search for a specific term' do
+      test_term = Term.create('carrot', 'veggie')
+      Term.search('carrot').should eq test_term
+    end
+  end
 end

@@ -1,13 +1,12 @@
 require './lib/dictionary'
 
-
-
 def main_menu
 
   puts "Press 'a' to add a new term"
   puts "Press 'd' to delete an exisiting term"
   puts "Press 'e' to edit an existing term"
   puts "Press 'l' to list all terms"
+  puts "Press 's' to search terms"
   puts "Press 'x' to exit"
 
   main_choice = gets.chomp
@@ -21,6 +20,8 @@ def main_menu
     edit_term
   when 'l'
     list_terms
+  when 's'
+    search_terms
   when 'x'
     puts "Goodbye!"
   else
@@ -46,6 +47,16 @@ def list_terms
   end
   main_menu
 end
+
+def search_terms
+  puts "Enter the word you want to search for \n"
+  search_word = gets.chomp
+  puts "Here is your word and definition: "
+  selected_term = Term.search(search_word)
+  puts "#{selected_term.word}: #{selected_term.definition} \n\n"
+  main_menu
+end
+
 
 def delete_term
   puts "Put the number of the term you would like to delete \n"
